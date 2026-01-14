@@ -4,6 +4,7 @@ from Model.SQLAlchemy.schema import Circuit_Model
 
 class Tour_Modeliser_For_Table_View():
     def Add_All_Data(self,circuit:list[Circuit_Model]):
+        print(f"Alavana : {len(circuit)}")
         self.header = ["Id","Title","Price"]
         self.data = [[],[],[]]
         for key,element in enumerate(circuit):
@@ -13,11 +14,12 @@ class Tour_Modeliser_For_Table_View():
     def Ready_Model(self) -> QStandardItemModel:
         model = QStandardItemModel()
         model.setColumnCount(len(self.header))
-        model.setRowCount(len(len(self.data[0])))
+        model.setRowCount(len(self.data[0]))
         for index_row in range(len(self.data[0])):
             for index_column in range(len(self.header)):
                 if index_row == 0:
                     item = QStandardItem(self.header[index_column])
+                    print(self.header[index_column])
                     model.setItem(index_row,index_column,item)
                 else:
                     item = QStandardItem(f"{self.data[index_column][index_row - 1]}")

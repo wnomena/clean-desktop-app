@@ -7,7 +7,7 @@
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
-from temp_ui.PY.add_tour_dialog import Ui_Magadagascar_Tours
+
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -21,7 +21,6 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QHeaderVi
     QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
-    __Dialog_to_add_new_tour = Ui_Magadagascar_Tours()
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -148,10 +147,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.label)
 
-        self.tableView = QTableView(self.circuits_ui)
-        self.tableView.setObjectName(u"tableView")
+        self.table_to_list_circuit = QTableView(self.circuits_ui)
+        self.table_to_list_circuit.setObjectName(u"table_to_list_circuit")
 
-        self.verticalLayout_2.addWidget(self.tableView)
+        self.verticalLayout_2.addWidget(self.table_to_list_circuit)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -185,10 +184,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addLayout(self.verticalLayout_3)
 
-        self.tableView_2 = QTableView(self.page)
-        self.tableView_2.setObjectName(u"tableView_2")
+        self.table_to_list_contact = QTableView(self.page)
+        self.table_to_list_contact.setObjectName(u"table_to_list_contact")
 
-        self.verticalLayout_4.addWidget(self.tableView_2)
+        self.verticalLayout_4.addWidget(self.table_to_list_contact)
 
         self.stackedWidget.addWidget(self.page)
 
@@ -229,12 +228,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
-
-        self.btn_add_new_tour.clicked.connect(self.__Dialog_to_add_new_tour.setupUi(MainWindow))
     # setupUi
 
     def retranslateUi(self, MainWindow):
@@ -259,5 +256,3 @@ class Ui_MainWindow(object):
         self.config_btn.setText(QCoreApplication.translate("MainWindow", u"Configuration", None))
     # retranslateUi
 
-
-    #action

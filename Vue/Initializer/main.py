@@ -28,6 +28,9 @@ class Final():
         self.__equipement_model.Add_All_Data(self.__all_data_instance.equipement_needed)
         self.__included_model.Add_All_Data(self.__all_data_instance.included)
         self.__Client_ui.setupUi(window)
+        self.__Client_ui.table_to_list_circuit.setModel(self.__circuit_model.Ready_Model())
+
+    
 
     
 

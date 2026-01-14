@@ -21,8 +21,8 @@ class Instance_of_All_Data(Mysql_Pool):
     
     async def Worker(self):
         while True:
-            await asyncio.to_thread(self.__Fetch_Tour_Data_From_Database)
-            await asyncio.to_thread(self.__Fetch_Contact_Data_From_Database)
+            await self.__Fetch_Tour_Data_From_Database()
+            await self.__Fetch_Contact_Data_From_Database()
             await asyncio.sleep(3600/2)
     
     async def __Append_To_Contact_List(self,contact:Contact):
