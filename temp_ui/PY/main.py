@@ -7,7 +7,7 @@
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
-
+from temp_ui.PY.add_tour_dialog import Ui_Magadagascar_Tours
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -21,6 +21,7 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QHeaderVi
     QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
+    __Dialog_to_add_new_tour = Ui_Magadagascar_Tours()
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -122,15 +123,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
 
-        self.pushButton_2 = QPushButton(self.page_2)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.btn_save_data_information = QPushButton(self.page_2)
+        self.btn_save_data_information.setObjectName(u"btn_save_data_information")
         font1 = QFont()
         font1.setBold(False)
-        self.pushButton_2.setFont(font1)
-        self.pushButton_2.setStyleSheet(u"background-color: rgb(38, 162, 105);\n"
+        self.btn_save_data_information.setFont(font1)
+        self.btn_save_data_information.setStyleSheet(u"background-color: rgb(38, 162, 105);\n"
 "color: rgb(255, 255, 255);")
 
-        self.horizontalLayout_3.addWidget(self.pushButton_2)
+        self.horizontalLayout_3.addWidget(self.btn_save_data_information)
 
 
         self.verticalLayout_6.addLayout(self.horizontalLayout_3)
@@ -158,11 +159,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
-        self.pushButton = QPushButton(self.circuits_ui)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setStyleSheet(u"background-color: rgb(46, 194, 126);")
+        self.btn_add_new_tour = QPushButton(self.circuits_ui)
+        self.btn_add_new_tour.setObjectName(u"btn_add_new_tour")
+        self.btn_add_new_tour.setStyleSheet(u"background-color: rgb(46, 194, 126);")
 
-        self.horizontalLayout.addWidget(self.pushButton)
+        self.horizontalLayout.addWidget(self.btn_add_new_tour)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout)
@@ -232,6 +233,8 @@ class Ui_MainWindow(object):
 
 
         QMetaObject.connectSlotsByName(MainWindow)
+
+        self.btn_add_new_tour.clicked.connect(self.__Dialog_to_add_new_tour.setupUi(MainWindow))
     # setupUi
 
     def retranslateUi(self, MainWindow):
@@ -247,12 +250,14 @@ class Ui_MainWindow(object):
         self.database_password.setPlaceholderText(QCoreApplication.translate("MainWindow", u"root", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Adresse de la base de donn\u00e9es", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Numero de port", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Enregistrer les modifications", None))
+        self.btn_save_data_information.setText(QCoreApplication.translate("MainWindow", u"Enregistrer les modifications", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Circuits", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Ajouter de nouveau circuit", None))
+        self.btn_add_new_tour.setText(QCoreApplication.translate("MainWindow", u"Ajouter de nouveau circuit", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Contacts", None))
         self.tours_btn.setText(QCoreApplication.translate("MainWindow", u"Circuits", None))
         self.contact_btn.setText(QCoreApplication.translate("MainWindow", u"Contacts", None))
         self.config_btn.setText(QCoreApplication.translate("MainWindow", u"Configuration", None))
     # retranslateUi
 
+
+    #action

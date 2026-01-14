@@ -2,7 +2,7 @@ from PySide6.QtGui import QStandardItemModel,QStandardItem
 from Model.SQLAlchemy.schema import Included_task_in_Price_Model
 
 
-class Adrenaline_Modeliser_For_TableView:
+class Included_Modeliser_For_TableView:
     def Add_All_Data(self,equipment:list[Included_task_in_Price_Model]):
         self.header = ["Element"]
         self.data = [element.content for element in equipment]

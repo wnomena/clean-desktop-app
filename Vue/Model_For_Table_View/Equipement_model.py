@@ -2,7 +2,7 @@ from PySide6.QtGui import QStandardItemModel,QStandardItem
 from Model.SQLAlchemy.schema import Equipement_Model
 
 
-class Adrenaline_Modeliser_For_TableView:
+class Equipement_Modeliser_For_TableView:
     def Add_All_Data(self,equipment:list[Equipement_Model]):
         self.header = ["Element"]
         self.data = [element.equipment for element in equipment]

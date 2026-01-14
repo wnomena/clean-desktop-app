@@ -169,7 +169,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="btn_save_data_information">
             <property name="font">
              <font>
               <bold>false</bold>
@@ -224,7 +224,7 @@ color: rgb(255, 255, 255);</string>
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="btn_add_new_tour">
             <property name="styleSheet">
              <string notr="true">background-color: rgb(46, 194, 126);</string>
             </property>
