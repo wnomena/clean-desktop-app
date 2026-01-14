@@ -145,21 +145,14 @@ class Contact_Model_without_Pydantic:
         self.circuit_id = circuit_id
         self.Completed = Completed
 
-    
-class User_of_Database_for_Sqlite(Base):
-    __tablename__="database_info"
-    id:Mapped[int] = mapped_column(Integer,primary_key=True)
-    database_name:Mapped[str] = mapped_column(String,nullable=False)
-    database_password:Mapped[str] = mapped_column(String,nullable=False)
-    database_user:Mapped[str] = mapped_column(String,nullable=False)
-    database_port:Mapped[int] = mapped_column(Integer,nullable=False)
-    database_hosting:Mapped[str] = mapped_column(String,nullable=False)
-    
-class User_of_Database_for_Sqlite_Mode:
-    def __init__(self,id:int,database_hosting:str,database_name:str,database_password:str,database_user:str,database_port:int):
-        self.id = id
-        self.database_hosting = database_hosting
-        self.database_name = database_name
-        self.database_password = database_password
-        self.database_user = database_user
-        self.database_port = database_port
+
+class Modelised_Value:
+    def __init__(self,circuit:list[Circuit_Model],adrenaline:list[Adrenaline_Model],itineraire: list[Itinerary_Model],equipement: list[Equipement_Model], included: list[Included_task_in_Price_Model]):
+        self.circuit = circuit
+        self.itineraire = itineraire
+        self.equipement = equipement
+        self.adrenaline = adrenaline
+        self.included = included
+
+
+
