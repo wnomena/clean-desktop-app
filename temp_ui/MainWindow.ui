@@ -41,7 +41,8 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(28, 113, 216);</string>
+             <string notr="true">background-color: rgb(38, 162, 105);
+</string>
             </property>
             <property name="text">
              <string>Configuration</string>
@@ -197,7 +198,7 @@ color: rgb(255, 255, 255);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(53, 132, 228);</string>
+           <string notr="true">background-color: rgb(38, 162, 105);</string>
           </property>
           <property name="text">
            <string>Circuits</string>
@@ -248,7 +249,7 @@ color: rgb(255, 255, 255);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(28, 113, 216);</string>
+             <string notr="true">background-color: rgb(38, 162, 105);</string>
             </property>
             <property name="text">
              <string>Contacts</string>
@@ -281,6 +282,9 @@ color: rgb(255, 255, 255);</string>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QPushButton" name="tours_btn">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(28, 113, 216);</string>
+         </property>
          <property name="text">
           <string>Circuits</string>
          </property>
@@ -288,6 +292,9 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item>
         <widget class="QPushButton" name="contact_btn">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(28, 113, 216);</string>
+         </property>
          <property name="text">
           <string>Contacts</string>
          </property>
@@ -295,6 +302,9 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item>
         <widget class="QPushButton" name="config_btn">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(28, 113, 216);</string>
+         </property>
          <property name="text">
           <string>Configuration</string>
          </property>
