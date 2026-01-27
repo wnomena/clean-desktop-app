@@ -3,25 +3,28 @@ from Model.SQLAlchemy.schema import Circuit_Model
 
 
 class Tour_Modeliser_For_Table_View():
-    def Add_All_Data(self,circuit:list[Circuit_Model]):
-        print(f"Alavana : {len(circuit)}")
-        self.header = ["Id","Title","Price"]
+    def __init__(self):
+        pass
+
+    def Add_All_Data(self,circuit:list[Circuit_Model]): 
+        self.header = ["Identifiant","Nom du Circuit","Prix du trajet / Personne"]
         self.data = [[],[],[]]
+
         for key,element in enumerate(circuit):
             self.data[0].insert(key,element.id)
             self.data[1].insert(key,element.title)
             self.data[2].insert(key,f"{element.price} €")
+        print(self.data)
     def Ready_Model(self) -> QStandardItemModel:
         model = QStandardItemModel()
         model.setColumnCount(len(self.header))
         model.setRowCount(len(self.data[0]))
-        for index_row in range(len(self.data[0])):
+        for index_row in range(len(self.data[0]) + 1):
             for index_column in range(len(self.header)):
                 if index_row == 0:
                     item = QStandardItem(self.header[index_column])
-                    print(self.header[index_column])
                     model.setItem(index_row,index_column,item)
-                else:
+                elif index_row > 0:
                     item = QStandardItem(f"{self.data[index_column][index_row - 1]}")
                     model.setItem(index_row,index_column,item)
         return model

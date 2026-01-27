@@ -9,7 +9,7 @@
 ################################################################################
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
+    QMetaObject, QObject, QPoint, QRect,Slot,
     QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
@@ -230,7 +230,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget.setCurrentIndex(1)
 
-
+        
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
@@ -255,4 +255,5 @@ class Ui_MainWindow(object):
         self.contact_btn.setText(QCoreApplication.translate("MainWindow", u"Contacts", None))
         self.config_btn.setText(QCoreApplication.translate("MainWindow", u"Configuration", None))
     # retranslateUi
-
+    def Change_Ui(self,index:int):
+        self.stackedWidget.setCurrentIndex(index)

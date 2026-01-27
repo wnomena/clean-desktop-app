@@ -1,3 +1,4 @@
+from typing import TypedDict
 from sqlalchemy.orm import Mapped,mapped_column,DeclarativeBase,relationship
 from sqlalchemy import String,Integer,ForeignKey
 
@@ -145,14 +146,48 @@ class Contact_Model_without_Pydantic:
         self.circuit_id = circuit_id
         self.Completed = Completed
 
+    
+class Circuit_Dict_Mode(TypedDict):
+    id:int | None
+    title:str
+    subtitle:str
+    description:str
+    duration:str
+    difficulty:int
+    price:int
+    image:str
 
-class Modelised_Value:
-    def __init__(self,circuit:list[Circuit_Model],adrenaline:list[Adrenaline_Model],itineraire: list[Itinerary_Model],equipement: list[Equipement_Model], included: list[Included_task_in_Price_Model]):
-        self.circuit = circuit
-        self.itineraire = itineraire
-        self.equipement = equipement
-        self.adrenaline = adrenaline
-        self.included = included
 
+class Itinerary_Dict_Mode(TypedDict):
+    id:int | None
+    place:str
+    order_id:int
+    circuit_id:int
 
+class Equipement_Dicat_Mode(TypedDict):
+    id:int | None
+    equipment:str
+    circuit_id:int
+
+class Adrenaline_Dicat_Mode(TypedDict):
+    id:int | None
+    content:str
+    circuit_id:int
+
+class Included_Dicat_Mode(TypedDict):
+    id:int | None
+    content:str
+    circuit_id:int
+
+class Data(TypedDict):
+    adrenaline:list[Adrenaline_Dicat_Mode]
+    circuit:list[Circuit_Dict_Mode]
+    included_in_price:list[Included_Dicat_Mode]
+    equipment:list[Equipement_Dicat_Mode]
+    itinerary:list[Itinerary_Dict_Mode]
+
+class ResponseFetch(TypedDict):
+    code:int
+    data:Data
+    error:str
 
