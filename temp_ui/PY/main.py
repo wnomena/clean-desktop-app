@@ -9,7 +9,7 @@
 ################################################################################
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,Slot,
+    QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
@@ -78,11 +78,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.label_5, 2, 0, 1, 1)
 
-        self.lineEdit = QLineEdit(self.page_2)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.database_port = QLineEdit(self.page_2)
+        self.database_port.setObjectName(u"database_port")
+        self.database_port.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.gridLayout.addWidget(self.lineEdit, 5, 1, 1, 1)
+        self.gridLayout.addWidget(self.database_port, 5, 1, 1, 1)
 
         self.user_name = QLineEdit(self.page_2)
         self.user_name.setObjectName(u"user_name")
@@ -228,9 +228,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
-        
+
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
@@ -242,7 +242,7 @@ class Ui_MainWindow(object):
         self.database_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"local_caponmada", None))
         self.database_hosting.setPlaceholderText(QCoreApplication.translate("MainWindow", u"caponmada.mg/192.168.1.1", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Nom de base de donn\u00e9es", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"3306", None))
+        self.database_port.setPlaceholderText(QCoreApplication.translate("MainWindow", u"3306", None))
         self.user_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"root", None))
         self.database_password.setPlaceholderText(QCoreApplication.translate("MainWindow", u"root", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Adresse de la base de donn\u00e9es", None))
@@ -255,5 +255,4 @@ class Ui_MainWindow(object):
         self.contact_btn.setText(QCoreApplication.translate("MainWindow", u"Contacts", None))
         self.config_btn.setText(QCoreApplication.translate("MainWindow", u"Configuration", None))
     # retranslateUi
-    def Change_Ui(self,index:int):
-        self.stackedWidget.setCurrentIndex(index)
+

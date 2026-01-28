@@ -17,7 +17,8 @@ class Instance_of_All_Data(Mysql_Pool):
     included:list[Included_task_in_Price_Model] = []
     contact:list[Contact_Model_without_Pydantic] = []
     def __init__(self):
-        self.async_session = async_sessionmaker(self._engine,expire_on_commit=False)
+        super().__init__()
+        self.async_session = async_sessionmaker(self._engine,expire_on_commit=False) if self._engine else None
         with ThreadPoolExecutor(max_workers=1) as executor:
             executor.submit(asyncio.run,self.Worker())
     
