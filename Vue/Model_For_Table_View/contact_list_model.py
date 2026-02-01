@@ -1,17 +1,20 @@
 from PySide6.QtGui import QStandardItemModel,QStandardItem
 from Model.SQLAlchemy.schema import Contact_Model_without_Pydantic
 
-
 class Contact_Modeliser_For_TableView():
+    def __init__(self):
+        pass
     def Add_All_Data(self,contact:list[Contact_Model_without_Pydantic]):
+
         self.header = ["Identifiant","Nom du client","Adresse mail"]
         self.data = [[],[],[]]
         for key,element in enumerate(contact):
-            print(element)
             if element.Completed:
                 self.data[0].insert(key,element.id)
                 self.data[1].insert(key,element.name)
                 self.data[2].insert(key,element.mail)
+
+        print(self.data)
 
     def Ready_Model(self) -> QStandardItemModel:
         model = QStandardItemModel()
@@ -23,7 +26,7 @@ class Contact_Modeliser_For_TableView():
                     item = QStandardItem(self.header[index_column])
                     model.setItem(index_row,index_column,item)
                 elif index_row > 0:
-                    print(self.data[index_column][index_row - 1])
-                    item = QStandardItem(self.data[index_column][index_row - 1])
+                    item = QStandardItem(str(self.data[index_column][index_row - 1]))
                     model.setItem(index_row,index_column,item)
+
         return model

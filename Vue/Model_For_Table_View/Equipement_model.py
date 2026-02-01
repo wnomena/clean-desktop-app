@@ -15,3 +15,6 @@ class Equipement_Modeliser_For_TableView:
             item = QStandardItem(element)
             model.setItem(0,key,item)
         return model
+
+    def Delete_All_temp(self):
+        self.data = []

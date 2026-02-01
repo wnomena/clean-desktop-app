@@ -14,7 +14,6 @@ class Tour_Modeliser_For_Table_View():
             self.data[0].insert(key,element.id)
             self.data[1].insert(key,element.title)
             self.data[2].insert(key,f"{element.price} €")
-        print(self.data)
     def Ready_Model(self) -> QStandardItemModel:
         model = QStandardItemModel()
         model.setColumnCount(len(self.header))

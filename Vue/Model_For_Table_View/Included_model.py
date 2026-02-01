@@ -5,7 +5,7 @@ from Model.SQLAlchemy.schema import Included_task_in_Price_Model
 class Included_Modeliser_For_TableView:
     def Add_All_Data(self,equipment:list[Included_task_in_Price_Model]):
         self.header = ["Element"]
-        self.data = [element.content for element in equipment]
+        self.data = equipment
         
     def Ready_Model(self) -> QStandardItemModel:
         model = QStandardItemModel()
@@ -15,3 +15,6 @@ class Included_Modeliser_For_TableView:
             item = QStandardItem(element)
             model.setItem(0,key,item)
         return model
+
+    def Delete_All_temp(self):
+        self.data = []

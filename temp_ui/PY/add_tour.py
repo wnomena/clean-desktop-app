@@ -20,20 +20,15 @@ from PySide6.QtWidgets import (QApplication, QDialog, QGridLayout, QHBoxLayout,
     QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
     QTableView, QVBoxLayout, QWidget)
 
-class Dialog(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.dialog = Ui_Magadagascar_Tours()
 
-    def initialization(self):
-        self.dialog.setupUi(self)
+class Ui_Magadagascar_Tours(QDialog):
 
-
-class Ui_Magadagascar_Tours(object):
+    def __init__(self, /, parent = ..., f = ..., *, sizeGripEnabled = ..., modal = ...):
+        super().__init__(parent, f, sizeGripEnabled=sizeGripEnabled, modal=modal)
     def setupUi(self, Magadagascar_Tours):
         if not Magadagascar_Tours.objectName():
             Magadagascar_Tours.setObjectName(u"Magadagascar_Tours")
-        Magadagascar_Tours.resize(901, 502)
+        Magadagascar_Tours.resize(947, 502)
         Magadagascar_Tours.setStyleSheet(u"background-color: rgb(192, 191, 188);")
         self.verticalLayout = QVBoxLayout(Magadagascar_Tours)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -522,7 +517,7 @@ class Ui_Magadagascar_Tours(object):
 
         self.retranslateUi(Magadagascar_Tours)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Magadagascar_Tours)

@@ -1,7 +1,7 @@
 from Model.SQLAlchemy.schema import Adrenaline_Model, Circuit_Model, Equipement_Model, Included_task_in_Price_Model, Itinerary_Model
 
 
-class Temp_Data_During_Add_new_Circuit():
+class Temp_Data_During_Add_new_Circuit:
     #les données à proposer au client
     __adrenaline:list[Adrenaline_Model]  = []
     __itineraire:list[Itinerary_Model] = []
@@ -36,8 +36,8 @@ class Temp_Data_During_Add_new_Circuit():
         return self.__included
     
     def Delete_Temp_Value(self):
-        self.new_adrenaline.clear()
-        self.new_circuit.clear()
-        self.new_equipement_needed.clear()
-        self.new_itineraire.clear()
-        self.new_included()
+        self.new_adrenaline = []
+        self.new_circuit = []
+        self.new_equipement_needed = []
+        self.new_itineraire = []
+        self.new_included = []

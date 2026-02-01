@@ -53,12 +53,16 @@ class Itinerary(Base):
 class Itinerary_Model:
     def __init__(self,id:int | None,
     place:str,
-    order_id:int,
-    circuit_id:int):
+    order_id:int  | None,
+    circuit_id:int,
+    description:str,
+    day:int):
         self.id = id
         self.place = place
         self.order_id = order_id
         self.circuit_id = circuit_id
+        self.description = description
+        self.day = day
 
 
 class Equipement(Base):
@@ -124,7 +128,8 @@ class Contact(Base):
     circuit = relationship("Circuit",back_populates="contact")
 
 class Contact_Model_without_Pydantic:
-    def __init__(self,    id:int | None,
+    def __init__(self,
+    id:int | None,
     name:str,
     subject:str | None,
     body:str,
@@ -135,7 +140,7 @@ class Contact_Model_without_Pydantic:
     circuit_id:int | None,
     total_price:int | None,Completed:int | None):
         self.id = id
-        self.name = name,
+        self.name = name
         self.subject = subject
         self.body = body
         self.mail = mail
@@ -161,8 +166,9 @@ class Circuit_Dict_Mode(TypedDict):
 class Itinerary_Dict_Mode(TypedDict):
     id:int | None
     place:str
-    order_id:int
-    circuit_id:int
+    order_id:int | None
+    description:str
+    day:int
 
 class Equipement_Dicat_Mode(TypedDict):
     id:int | None
@@ -191,3 +197,7 @@ class ResponseFetch(TypedDict):
     data:Data
     error:str
 
+
+class Dict(TypedDict):
+    path:str
+    file_name:str
